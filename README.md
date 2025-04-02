@@ -1,6 +1,6 @@
 # CRUD nodejs 
 
-## Moreno Carrillo José Manuel
+## Manuel Moreno
 
 # Explicación de Exportaciones y Nodemon
 ![imagen nodejs](./nodejs-new-pantone-black.png "nodejs")
