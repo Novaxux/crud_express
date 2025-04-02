@@ -45,3 +45,9 @@ nodemon app.js
   "dev": "nodemon app.js"
 }
 ```
+### node watch  
+misma funcion de nodemon solo que es nativa de node
+
+```bash
+node --watch archivo.js
+```
