@@ -1,4 +1,4 @@
-export  class Inventario{
+class Inventario{
     constructor(){
       this.datos=[];
     }
@@ -9,17 +9,6 @@ export  class Inventario{
         return true
       }else
         return false
-    }
-    extraerUltimoProducto(){
-      let extraer = this.datos.pop()
-      return extraer
-    }
-    extraerPrimerProductoHTML(){
-        let extraer = this.datos[0]
-        for (let i = 0; i < this.datos.length; i++)
-                this.datos[i]= this.datos[i+1]
-            this.datos.pop()
-        return extraer
     }
     eliminar(codigo){
       let buscar = this.buscarBinario(codigo)
@@ -57,16 +46,12 @@ export  class Inventario{
             res += this.datos[i].infoHtml();
       return res;
     }
-    listarInvertido(){
-      let res="";
-      for (let i = this.datos.length -1; i>=0; i--)
-        if (this.datos[i])
-            res += this.datos[i].infoHtml();
-      return res;
-    }
+     
     _insertar(valor,posicion){
       for (let i = this.datos.length;i > posicion; i--)
           this.datos[i] = this.datos[i-1]
       this.datos[posicion] = valor
   }  
 }
+
+module.exports = Inventario

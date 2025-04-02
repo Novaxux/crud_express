@@ -6,7 +6,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
-let productos = []
+const Inventario = require('./inventario')
+let inventario = new Inventario()
+let productos = inventario.datos
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');  
@@ -14,12 +16,9 @@ app.get('/', (req, res) => {
 
 app.post('/agregar', (req, res) => {
   const nuevoProducto = req.body;
-  if(productos.find(element => element.codigo == nuevoProducto.codigo)){
-    res.json({ msg: `Producto con ID ${nuevoProducto.codigo} ya existe.`})  
-  }else{
-    productos.push(nuevoProducto);
-    res.json({msg:'agregado'}); 
-  }
+  inventario.agregar(nuevoProducto) 
+  ? res.json({msg:'agregado'}) 
+  : res.json({ msg: `Producto con ID ${nuevoProducto.codigo} ya existe.`})  
 })
 
 app.get('/productos',(req,res)=>{
@@ -29,18 +28,17 @@ app.get('/productos',(req,res)=>{
 app.get('/productos/:codigo',(req,res)=>{
   const codigo = parseInt(req.params.codigo)
   // algo que aprendí
-  const idEsIgual = element => element.codigo == codigo; 
-  const producto = productos.find(idEsIgual)
-
-  producto ? res.json(producto) : res.json({msg: "no encontrado"})
+  // const idEsIgual = element => element.codigo == codigo; 
+  // const producto = productos.find(idEsIgual)
+  const producto = inventario.buscarBinario(codigo)
+  producto.encontrado ? res.json(producto.elemento) : res.json({msg: "no encontrado"})
 })
 
 app.delete('/productos/:codigo',(req,res)=>{
   const codigo = parseInt(req.params.codigo)
-  const productoIndex = productos.findIndex( element => element.codigo == codigo)
 
-  productoIndex !=-1 
-  ? (productos.splice(productoIndex,1), res.json({ msg: `Producto con ID ${codigo} eliminado.` }))
+  inventario.eliminar(codigo) 
+  ? res.json({ msg: `Producto con ID ${codigo} eliminado.` })
   : res.json({msg: "no encontrado"})
 })
 
