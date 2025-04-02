@@ -70,5 +70,3 @@ export  class Inventario{
       this.datos[posicion] = valor
   }  
 }
-
-module.exports =Inventario;

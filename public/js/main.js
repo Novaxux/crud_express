@@ -1,26 +1,21 @@
-const Inventario = require(Inventario)
-const Producto = require(Producto)
-
+import { Inventario } from './classes/inventario.js';
+import { Producto } from './classes/producto.js';
 let inventario = new Inventario()
 
  function obtenerValores() {
   let cod=parseInt(document.getElementById('codigo').value);
   let nom=document.getElementById('nombre').value;
-  let cant=parseInt(document.getElementById('cantidad').value);
-  let cost=parseFloat(document.getElementById('costo').value);
-  return {cod, nom, cant, cost};
+  return {cod, nom};
 }
 function limpiarCasillas() {
   document.getElementById('codigo').value='';
   document.getElementById('nombre').value='';
-  document.getElementById('cantidad').value='';
-  document.getElementById('costo').value='';
 }
   document.getElementById('formSubmit').addEventListener('submit',function (e){
     e.preventDefault();
     // recuperar cajas de texto y crear objeto
-    let { cod, nom, cant, cost } = obtenerValores();
-    let nuevo=new Producto(cod,nom,cant,cost);
+    let { cod, nom} = obtenerValores();
+    let nuevo=new Producto(cod,nom);
     //agregar
     let div=document.getElementById('detalles');
     let agregado = inventario.agregar(nuevo)

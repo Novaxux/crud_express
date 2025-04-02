@@ -1,5 +1,5 @@
-class Producto {
-    constructor(codigo, nombre, cantidad, costo){
+export class Producto {
+    constructor(codigo, nombre){
       this.codigo=codigo;
       this.nombre=nombre;
     }
@@ -13,4 +13,3 @@ class Producto {
     }
   }
  
-  module.exports = Producto;
