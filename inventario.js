@@ -46,7 +46,6 @@ class Inventario{
             res += this.datos[i].infoHtml();
       return res;
     }
-     
     _insertar(valor,posicion){
       for (let i = this.datos.length;i > posicion; i--)
           this.datos[i] = this.datos[i-1]

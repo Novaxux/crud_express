@@ -1,8 +1,14 @@
-|body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+body {
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;   
+    background-color: #49315d;
     margin: 0;
     padding: 20px;
+    display: flex;
 }
 
 h2 {
@@ -11,18 +17,31 @@ h2 {
 }
 
 .form-section {
+    flex-wrap: wrap;
+    width: 30%;
     display: flex;
-    justify-content: space-between;
-    gap: 20px; /* Espacio entre las secciones */
     margin-top: 20px;
+}
+#detalles{
+    width: 65%;
+    height: 100%;
+}
+#estatus{
+    color: red;
+    width: 5%;
+    height: 5rem;
+    display: flex;
+    vertical-align: middle;
+    background-color: #7551afa2;
+    border-radius: 5px;
 }
 
 .product-entry, .search-delete {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    width: 100%; /* Ajustar el ancho para que encaje mejor */
+    height: 18rem;
+    background: rgba(56, 108, 90, 0.6);
+    border: none;
     padding: 15px;
-    width: 48%; /* Ajustar el ancho para que encaje mejor */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -41,18 +60,19 @@ h2 {
 }
 
 button {
-    background-color: #28a745;
+    background-color: #0808089b;
     color: white;
     border: none;
     padding: 10px;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%;
+    width: 97%;
     margin-top: 10px; /* Espaciado entre botones */
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #ffffff;
+    color: black;
 }
 
 .search-delete h2 {
@@ -81,8 +101,11 @@ button:hover {
 }
 
 .product {
-    background: white;
-    border: 1px solid #ddd;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.418);
+    border: none;
+    width: 15%;
     border-radius: 8px;
     padding: 15px;
     margin: 10px;
@@ -95,21 +118,11 @@ button:hover {
 }
 
 .product h3 {
-    color: #28a745;
+    color: #93ffac;
     margin-bottom: 10px;
 }
 
 .product p {
     margin: 5px 0;
-    color: #555;
-}
-
-@media (max-width: 768px) {
-    .form-section {
-        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
-    }
-    
-    .product-entry, .search-delete {
-        width: 100%; /* Ancho completo en pantallas pequeñas */
-    }
+    color: #ffffff;
 }
