@@ -1,36 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ingreso de Producto</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-        <section class="form-section">
-            <article class="product-entry">
-                <h2>Ingresar Producto</h2>
-                <form id="formSubmit">
-                    <label for='codigo'>Código:<input type='number' id='codigo' required></label>
-                    <label for='nombre'>Nombre:<input type='text' id='nombre' required></label>
-                    <button type="submit">Agregar</button>
-                    
-                </form>
-                <button type='button' id='btnList'>Listar</button>
-            </article>
-        
-            <article class="search-delete">
-                <h2>Buscar</h2>
-                <label for='buscar'>Código:<input type='number' id='buscar'></label>
-                <button type='button' id='btnBusc'>Buscar</button>
-        
-                <h2>Eliminar</h2>
-                <label for='eliminar'>Código:<input type='number' id='eliminar'></label>
-                <button type='button' id='btnElim'>Eliminar</button>
-            </article>
-        </section>        
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="form-section">
+      <article class="product-entry">
+        <h2>Ingresar Producto</h2>
+        <form id="formSubmit">
+          <label for="codigo"
+            >Código:<input type="number" id="codigo" required
+          /></label>
+          <label for="nombre"
+            >Nombre:<input type="text" id="nombre" required
+          /></label>
+          <button type="submit">Agregar</button>
+        </form>
+        <button type="button" id="btnList">Listar</button>
+      </article>
+
+      <article class="search-delete">
+        <h2>Buscar</h2>
+        <label for="buscar">Código:<input type="number" id="buscar" /></label>
+        <button type="button" id="btnBusc">Buscar</button>
+
+        <h2>Eliminar</h2>
+        <label for="eliminar"
+          >Código:<input type="number" id="eliminar"
+        /></label>
+        <button type="button" id="btnElim">Eliminar</button>
+      </article>
+    </section>
     <div id="detalles" class="flexWrap"></div>
     <span id="estatus" class="flexWrap"></span>
     <script type="module" src="js/api.js"></script>
-</body>
+  </body>
 </html>

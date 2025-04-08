@@ -5,7 +5,7 @@ const {
   agregarProducto,
   obtenerProductos,
   obtenerProductoPorCodigo,
-  eliminarProducto
+  eliminarProducto,
 } = require('../controllers/producto.controller');
 
 router.get('/', mostrarIndex);

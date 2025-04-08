@@ -39,5 +39,5 @@ module.exports = {
   agregarProducto,
   obtenerProductos,
   obtenerProductoPorCodigo,
-  eliminarProducto
+  eliminarProducto,
 };
